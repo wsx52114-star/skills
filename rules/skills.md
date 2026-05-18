@@ -85,3 +85,15 @@ When the user requests a **new feature** (not a bug fix or minor tweak), you MUS
 - **setup-pre-commit**: Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add commit-time formatting/typechecking/testing.
   - **Path**: `.agents/skills/misc/setup-pre-commit/SKILL.md`
 
+- **prototype**: Build a throwaway prototype to flesh out a design before committing to it. Routes between two branches — a runnable terminal app for state/business-logic questions, or several radically different UI variations toggleable from one route. Use when the user wants to prototype, sanity-check a data model or state machine, mock up a UI, explore design options, or says "prototype this", "let me play with it", "try a few designs".
+  - **Path**: `.agents/skills/engineering/prototype/SKILL.md`
+
+- **handoff**: Compact the current conversation into a handoff document for another agent to pick up.
+  - **Path**: `.agents/skills/productivity/handoff/SKILL.md`
+
+- **edit-article**: Edit and improve articles by restructuring sections, improving clarity, and tightening prose. Use when user wants to edit, revise, or improve an article draft.
+  - **Path**: `.agents/skills/personal/edit-article/SKILL.md`
+
+- **obsidian-vault**: Search, create, and manage notes in the Obsidian vault with wikilinks and index notes. Use when user wants to find, create, or organize notes in Obsidian.
+  - **Path**: `.agents/skills/personal/obsidian-vault/SKILL.md`
+
