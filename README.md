@@ -188,6 +188,27 @@
 
 ---
 
+## 通用技術棧與領域轉譯層 (Domain & Tech Stack Adaptation Layer)
+
+本系統在 `rules/skills.md` 中內置了**動態技術棧轉譯機制**。當您在不同類型的專案中工作時，Agent 會自動識別當前的技術環境，並將通用技能（如 `tdd`、`diagnose` 等）的執行步驟與工具鏈即時適應至對應的開發實踐中：
+
+### 1. 前端網頁開發 (Frontend Web)
+* **測試驅動開發 (TDD)**：著重於 Vitest、Jest、Playwright 或 Cypress 等框架的 UI 元件與整合測試，模擬 API 回傳，驗證使用者可觀測的行為。
+* **偵錯與診斷 (Diagnose)**：引導使用瀏覽器開發者工具（Console、Network 面板、React/Vue DevTools）與 Lighthouse 效能與相容性檢測。
+
+### 2. 後端服務開發 (Backend Services)
+* **測試驅動開發 (TDD)**：著重於 API 端點與控制器整合測試，使用 Fake 或記憶體資料庫（如 SQLite in-memory）代替過度 Mocking。
+* **偵錯與診斷 (Diagnose)**：分析結構化日誌（Structured Logs）、資料庫查詢執行計畫（Query Plan）及記憶體/CPU Profile。
+
+### 3. 軟韌體嵌入式系統 (Firmware & Embedded)
+* **測試驅動開發 (TDD)**：著重於 C/C++（Unity, Ceedling, Google Test）或 Rust 的**主機端編譯與測試 (Host-side Testing)**，對 HAL 與暫存器進行 Mock 隔離。
+* **偵錯與診斷 (Diagnose)**：引導使用 SWD/JTAG 偵錯器（GDB、OpenOCD）進行單步執行，利用邏輯分析儀或示波器擷取匯流排訊號，並使用 RTT/UART 輸出日誌。
+
+### 4. 一般自動化與 Python 腳本 (Automation & Scripting)
+* **測試與診斷**：使用 pytest 或 unittest 進行檔案系統與系統指令模擬，診斷異常堆疊與結束代碼（Exit Code），並整合靜態檢查（如 pylint, black）。
+
+---
+
 > [!TIP]
 > **最佳實踐**
 > 每次準備開發新功能時，建議的黃金組合是：
